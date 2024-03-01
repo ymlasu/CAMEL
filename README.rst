@@ -10,8 +10,13 @@ Install:
 
 pip install camel-learn
 
+==========================================
+
 
 Simple code example: (more coming)
+
+
+
 
 
 import matplotlib.pyplot as plt
@@ -34,7 +39,6 @@ print(time.time()-t1)
 y = y.astype(int) #convert to category for easy visulization
 
 # Visualization
-# MNIST visualization
 plt.figure(1)
 plt.scatter(X_embedding[:, 0], X_embedding[:, 1], c=y, cmap='jet', s=0.2)
 plt.title('CAMEL Embedding')
