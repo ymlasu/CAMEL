@@ -1,3 +1,18 @@
+.. -*- mode: rst -*-
+
+.. image:: docs/Camel_logo.png
+  :width: 600
+  :alt: CAMELlogo
+  :align: center
+
+|pypi_version|_ |pypi_downloads|_
+
+.. |pypi_version| image:: https://img.shields.io/pypi/v/camel-learn.svg
+.. _pypi_version: https://pypi.python.org/pypi/camel-learn/
+
+.. |pypi_downloads| image:: https://pepy.tech/badge/camel-learn/month
+.. _pypi_downloads: https://pepy.tech/project/camel-learn
+
 Curvature Augmented Manifold Embedding and Learning -- CAMEL
 =======================================
 
