@@ -137,6 +137,9 @@ The theory behind the CAMEL is deing submitted and reviewed. I am on a flight ty
 
 .. image:: docs/Camel_learn.pdf
 
+For an in-depth explanation, please see :download:`A Detailed Theoretical Explainstion for CAMEL <docs/Camel_learn.pdf>`.
+
+
 Happy CAMEL!! :-)
 
 
