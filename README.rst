@@ -136,7 +136,7 @@ Theory and Reference
 The theory behind the CAMEL is deing submitted and reviewed. I am on a flight typing on a phone. Thus, I am only putting the draft pdf file for interested readers to take a look. will update this when I return.
 
 .. image:: docs/Camel_learn.pdf
-:alt: theory paper
+
 Happy CAMEL!! :-)
 
 
