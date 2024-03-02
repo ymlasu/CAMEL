@@ -5,7 +5,7 @@
   :alt: CAMELlogo
   :align: center
 
-|pypi_version|_ |pypi_downloads|_
+|pypi_version|_ 
 
 .. |pypi_version| image:: https://img.shields.io/pypi/v/camel-learn.svg
 .. _pypi_version: https://pypi.python.org/pypi/camel-learn/
@@ -82,6 +82,12 @@ The CAMEL is very easy to start with. you can start a basic unsupetvised learnin
     plt.tight_layout()
     plt.show()
 
+
 Simple code examples in test folder: (more coming)
+
+=====
+API
+=====
+There are several parameters that can control the results and performance of the CAMEL. Default values have been set if you want to start quickly. If you want to fine tune the CAMEL, below is a description of several main factors.
 
 
