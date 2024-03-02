@@ -90,4 +90,46 @@ API
 =====
 There are several parameters that can control the results and performance of the CAMEL. Default values have been set if you want to start quickly. If you want to fine tune the CAMEL, below is a description of several main factors.
 
+- ''n_components'': int, default=2
+        Dimensions of the embedded space. Typicalvalues are 2 or 3. it can be any integer.
+
+- ' ' n_neighbors'': int, default=10
+        Number of neighbors considered for nearest neighbor pairs for local structure preservation.
+
+- ''FP_number'': float, default=20
+        Number of further points(e.g. 20 Further pairs per node)
+        Further pairs are used for both local and global structure preservation.
+
+-''tail_coe'': float, default=0.05
+        Parameter to control the attractive force of neighbors (1/(1+tail_coe*dij)**2), smaller values indicate flat tail, do not recommend ro change
+    
+-''w_neighbors'': float, default=1.0
+        weight coefficient for attractive force of neighbors, large values indicates strong force for the same distance metric
+        
+-''w_curv'': float, default=0.001
+        weight coefficient for attractive/repulsive force due to local curvature, large values indicates strong force for the same distance metric        
+
+-''w_FP'': float, default=20
+        weight coefficient for repulsive force of far points, large values indicates strong force for the same distance metric    
+    
+-''lr'': float, default=1.0
+        Learning rate of the Adam optimizer for embedding. donot recommend to change.
+
+-''num_iters'': int, default=400
+        Number of iterations for the optimization of embedding. I observe that 200 is sufficient for most cases and 400 is used here for safe reason.
+
+-''target_weight'': float, default=0.5
+        weight factor for target/label during the supervised learning, 0 indicates no weight and it reduces to unsupervised one,
+        1 indicates infinity weight (set as a large value in practice.
+
+-''random_state'': int, optional
+        Random state for the camel instance.
+        Setting random state is useful for repeatability.
+
+
+
+other setting can be seen in the source code and will be updated i fututre documentation.
+======
+
+
 
