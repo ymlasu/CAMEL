@@ -26,6 +26,7 @@ CAMEL Requirements:
 * scikit-learn
 * numba
 * annoy
+* pandas
 
 Recommended packages:
 
