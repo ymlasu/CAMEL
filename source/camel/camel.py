@@ -1113,14 +1113,14 @@ class CAMEL(BaseEstimator):
     Parameters
     ---------
     n_components: int, default=2
-        Dimensions of the embedded space. We recommend to use 2 or 3.
+        Dimensions of the embedded space. 
 
     n_neighbors: int, default=10
         Number of neighbors considered for nearest neighbor pairs for local structure preservation.
 
-    FP_number: float, default=10
-        Number of further points(e.g. 10 Further pairs per node)
-        Further pairs are used for both local and global structure preservation.
+    FP_number: float, default=20
+        Number of further points(e.g. 20 Further pairs per node)
+        Further pairs are also known as negative samples, which are used to estimate the repulsive forces from remote points.
 
     pair_neighbors: numpy.ndarray, optional
         Nearest neighbor pairs constructed from a previous run or from outside functions.
@@ -1143,13 +1143,13 @@ class CAMEL(BaseEstimator):
     tail_coe: float, default=0.05
         Parameter to control the attractive force of neighbors (1/(1+tail_coe*dij)**2), smaller values indicate flat tail
     
-    w_neighbors: float, default=0.1
+    w_neighbors: float, default=1.0
         weight coefficient for attractive force of neighbors, large values indicates strong force for the same distance metric
         
-    w_curv: float, default=0.005
+    w_curv: float, default=0.001
         weight coefficient for attractive/repulsive force due to local curvature, large values indicates strong force for the same distance metric        
 
-    w_FP: float, default=2
+    w_FP: float, default=20
         weight coefficient for repulsive force of far points, large values indicates strong force for the same distance metric    
     
     lr: float, default=1.0
@@ -1164,7 +1164,7 @@ class CAMEL(BaseEstimator):
         
     target_weight: float, default=0.5
         weight factor for target/label during the supervised learning, 0 indicates no weight and it reduces to unsupervised one,
-        1 indicates infinity weight (set as a large value in practice
+        1 indicates infinity weight (set as a large value in practice, say 0.99)
                                      
     target_method: string, default=normal
     method used for supervised learning, 'normal' indicates that label information is only used to update the knn graph, but the embedding only uses the original X features
