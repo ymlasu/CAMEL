@@ -15,6 +15,7 @@ Curvature Augmented Manifold Embedding and Learning -- CAMEL
 ==
 
 CAMEL is a Python tool for dimension reduction and data visualization. It can perform unsupervised, supervised, semi-supervised, metric, and inverse learning.
+
 ----------
 Installing
 ----------
@@ -45,7 +46,7 @@ If pip is having difficulties pulling the dependencies, then I'd suggest install
 the dependencies manually using Anaconda. The author has tried Anaconda in Mac OS 14 with M1 and M2 CPU.
 
 
-======
+
 
 ---------------
 How to use CAMEL
