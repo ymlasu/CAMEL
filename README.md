@@ -1,4 +1,4 @@
-.. -*- mode: md -*-
+.. -*- mode: rst -*-
 
 .. image:: docs/Camel_logo.png
   :width: 600
