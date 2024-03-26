@@ -10,9 +10,9 @@
 .. |pypi_version| image:: https://img.shields.io/pypi/v/camel-learn.svg
 .. _pypi_version: https://pypi.python.org/pypi/camel-learn/
 
-
-#**Curvature Augmented Manifold Embedding and Learning -- CAMEL**
-
+===
+Curvature Augmented Manifold Embedding and Learning -- CAMEL
+===
 
 CAMEL is a Python tool for dimension reduction and data visualization. It can perform unsupervised, supervised, semi-supervised, metric, and inverse learning.
 
