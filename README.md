@@ -138,6 +138,7 @@ Theory and Reference
 Detailed derivation and examples can be found in the ArXiv paper.
 https://arxiv.org/abs/2403.14813
 
+
 .. image:: docs/Camel_learn.pdf
 
 
