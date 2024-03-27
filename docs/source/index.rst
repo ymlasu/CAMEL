@@ -34,6 +34,7 @@ Contents
 
    installation
    api
+   git_folder_structure
 
 .. toctree::
    :maxdepth: 2
