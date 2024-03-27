@@ -132,9 +132,9 @@ Several parameters can control the CAMEL's results and performance. Default valu
 The other setting can be seen in the source code and will be updated in future documentation.
 
 
-
+---------------------------
 Theory and Reference
----------
+---------------------------
 Detailed derivation and examples can be found in the ArXiv paper.
 https://arxiv.org/abs/2403.14813
 
