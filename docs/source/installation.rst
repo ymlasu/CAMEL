@@ -3,8 +3,8 @@ Installation
 
 .. _installation:
 
-Installation
-------------
+Required packages
+------------------
 
 CAMEL Requirements:
 
@@ -22,7 +22,8 @@ Recommended packages:
 * For metrics evaluation
    * gap statistics, coranking, optics
 
-**Install Options**
+Install Options
+--------------------
 
 .. code:: console
 
@@ -36,5 +37,9 @@ the dependencies manually. If you have installed older versions, you can upgrade
      (.venv) pip install camel-learn --upgrade
 
 
-If yo uare using Anaconda, please open anaconda-navigator first. On the left panel, select "enviroments". Click on the enviroment you are using and open 
+If you are using Anaconda, please open anaconda-navigator first. On the left panel, select "enviroments". Click on the enviroment you are using and open 
 a terminal. pip install or pip upgrade camel-learn using the code above. re-start ananconda-navigator to make the modulues up-to-date and available in your enviroments.
+
+
+Alternatively, you can download the git repo to a local drive, and import the CAMEL class from the source code folder in the github repo. You do need to install other required packages.
+
