@@ -6,13 +6,13 @@ from the Github repo at https://github.com/ymlasu/CAMEL
 
 The folder structure is schematically shown below
 
-..----
-    -- data
-    -- demo
-    -- docs
-    -- plot_util
-    -- source
-    -- test
+* -
+    - data
+    - demo
+    - docs
+    - plot_util
+    - source
+    - test
     READEME.md
     setup.cfg
     pyproject.toml
@@ -37,30 +37,30 @@ demo folder includes examples used in the arXiv paper on various learning tasks 
 template for interested readers to reproduce the results and revise them to be suitable for your own applications. Brief explaination for each files
 is given below.
 
--- eval_metrics.py: This files includes 14 quantitative evaluation metrics used inthe arXiv paper to evalue the model performance. The metrics can be called using the 
+- eval_metrics.py: This files includes 14 quantitative evaluation metrics used inthe arXiv paper to evalue the model performance. The metrics can be called using the 
     fuction lie XXXX_XXXX_eval.py, where XXXX refers to the metrics names. Detailed usage can be found in other example files in this folder.
 
 
--- FP_number_compare.py: This is a parametric study demo file for CAMEL to evalute the effect of diffrent far point (FP) numbers on the embedding quality.
+- FP_number_compare.py: This is a parametric study demo file for CAMEL to evalute the effect of diffrent far point (FP) numbers on the embedding quality.
 
--- inverse_learning_compare.py: This is a template for inverse learning. THis file compares the CAMEL and UMPA performance in generating images
+- inverse_learning_compare.py: This is a template for inverse learning. THis file compares the CAMEL and UMPA performance in generating images
     for MNIST and Fashion MNIST data. This can be extended to other generative modeling from low-dimentional embedding
 
--- metric_learning_compare.py: This is a template for metric learning, which is formulated as a projection of new data with learned embedding
+- metric_learning_compare.py: This is a template for metric learning, which is formulated as a projection of new data with learned embedding
     from either unsupervised and supervised learning. CAMEL, UMAP, and PaCMAP are compared here.
 
--- model_compare.py: This is the file for basic unsupervised learning comparision of 5 methods: tSNE, UMAP, Trimap, PacMAP, and CAMEL.
+- model_compare.py: This is the file for basic unsupervised learning comparision of 5 methods: tSNE, UMAP, Trimap, PacMAP, and CAMEL.
     THis is a good template to see how to input data file, setup embedding, metrics evaluation, and plotting.
 
--- neighbor_numbercompare.py: This is a parametric study demo file for CAMEL to evalute the effect of diffrent neighbor numbers on the embedding quality.
+- neighbor_numbercompare.py: This is a parametric study demo file for CAMEL to evalute the effect of diffrent neighbor numbers on the embedding quality.
 
--- semi_supervised_learning_compare.py: This is a template for semi supervised learning learning, which is formulated as a data augmentation and supervised learning with CAMEL.
+- semi_supervised_learning_compare.py: This is a template for semi supervised learning learning, which is formulated as a data augmentation and supervised learning with CAMEL.
     CAMEL and UMAP are compared here.
 
--- supervised_learning_compare.py: This is a template for supervised learning learning, which is formulated as a knn revision with label information.
+- supervised_learning_compare.py: This is a template for supervised learning learning, which is formulated as a knn revision with label information.
     CAMEL and UMAP are compared here.   
 
--- - weight_curvature_compare.py: This is a parametric study demo file for CAMEL to evalute the effect of diffrent weight coefficients for curvature-induced force field on the embedding quality.
+- weight_curvature_compare.py: This is a parametric study demo file for CAMEL to evalute the effect of diffrent weight coefficients for curvature-induced force field on the embedding quality.
 
 
 docs
