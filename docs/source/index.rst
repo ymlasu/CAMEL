@@ -1,4 +1,4 @@
-.. image:: docs/Camel_logo.png
+.. image:: ../Camel_logo.png
   :width: 600
   :alt: CAMELlogo
   :align: center
