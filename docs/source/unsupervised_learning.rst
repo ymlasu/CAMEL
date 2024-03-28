@@ -10,6 +10,7 @@ One simple example template is available in the git_folder_structure under folde
 The first step is to import all nessary modulues, such as 
 
 .. code-block:: python
+
     import matplotlib.pyplot as plt
     import time
     from camel import CAMEL
@@ -18,6 +19,7 @@ The first step is to import all nessary modulues, such as
 The next step is to load the data. We also checked the time() function here to evaluae the speed of computing. In this simple example, we directly used the datasets from sklearn package, swiss_roll.
 
 .. code:: python
+
     t1=time.time()
     X, y = datasets.make_swiss_roll(n_samples=50000, random_state=None)
 
@@ -26,6 +28,7 @@ Now, we load the feature data to variable X and label info to variable y. 50000 
 Following this, we can define the CAMEL() class.
 
 .. code:: python
+
     reducer= CAMEL()
 
 Now, we define a simplest CAMEL() class, reducer. We do not change any default setting in the CAMEL() class, as no new parameter settings are given.
@@ -33,17 +36,20 @@ Now, we define a simplest CAMEL() class, reducer. We do not change any default s
 Next, we want to perform the unsupervised learning using the defined CAMEL() class. 
 
 .. code:: python
+
     X_embedding = reducer.fit_transform(X)
     print(time.time()-t1)
 
 reducer.fit_transform is the operation to embed X to a low-diomentional sapce (default value is 2). Since the label information y is not provided, it only performs unsupervised learning. After the computing, it will output a time
 
 .. code:: python
+
     6.261963129043579
 
 It is very fast in this case as the input feature space is not high (e.g., 3). You now have a list of embedding of all in put data (e.g., X_embedding) and can evaluate how good this embedding is. We will show another example later for metrics-based evaluation. For now, we only focus on visual inspection.
 
 .. code:: python
+
     # Visualization
     plt.figure(1)
     plt.scatter(X_embedding[:, 0], X_embedding[:, 1], c=y, cmap='jet', s=0.2)
@@ -61,6 +67,7 @@ After running this code, you will see an embedding plot in 2D for the 3D swiss_r
 Sometimes, you have categorical data or you want categorical color scheme to see the trend. Thus, the labels can be converted to categorical data for visualization
 
 .. code:: python
+
     y = y.astype(int) #convert to category for easy visulization
     # Visualization
     plt.figure(1)
@@ -81,6 +88,7 @@ Above discussion is for the unsupervised learning with all default setting. If y
 For example, you want to change the number of neighbors to be 20 and the weight coeffieict for curvature to be 0.01. Thus,
 
 .. code:: python
+
     reducer= CAMEL(n_neighbors=20, w_curv=0.01)
     X_embedding = reducer.fit_transform(X)
     print(time.time()-t1)
@@ -107,6 +115,7 @@ A more comprehensive exmaple is shown here, whic his the template (model_compare
 The first step is to import all nessary modulues, such as 
 
 .. code:: python
+    
     # need to install the following packages
     import umap
     import trimap
