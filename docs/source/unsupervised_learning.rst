@@ -329,3 +329,10 @@ To provide a reference, the 5 MC for the above checking will need 10-12 hours on
     print(total_time)   
 
 Finally, all results are saved in the specified output path. This is helpful when you want to revisit the results in the future. Or, you need to visulize the metrics results. Please refer to plotting tutorial for details.
+
+Once all done, you can check the visulization of embedding results.
+
+.. image:: ../model_compare.png
+  :width: 600
+  :alt: model_compare
+  :align: center
