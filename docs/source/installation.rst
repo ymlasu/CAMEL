@@ -27,14 +27,14 @@ Install Options
 
 .. code:: console
 
-     (.venv) pip install camel-learn
+   pip install camel-learn
 
 If pip is having difficulties pulling the dependencies, then I'd suggest installing
 the dependencies manually. If you have installed older versions, you can upgrade CAMEL by
 
 .. code:: console
 
-     (.venv) pip install camel-learn --upgrade
+   pip install camel-learn --upgrade
 
 
 If you are using Anaconda, please open anaconda-navigator first. On the left panel, select "enviroments". Click on the enviroment you are using and open 
