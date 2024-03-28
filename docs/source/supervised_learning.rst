@@ -236,11 +236,11 @@ Since there are several methods and datasets, the visulization is orgnized using
                 digit_axes[k*n_data+i, j].set_axis_off()
 
 
-The above code performs the computing by looping through methods, data, and diffrent weight coefficients. 
+The above code performs the computing by looping through methods, data, and different weight coefficients. 
 
 Finally, all results are saved in the specified output path. Once all done, you can check the visulization of embedding results.
 
 .. image:: ../supervised_model_compare.png
   :width: 600
-  :alt: model_compare
+  :alt: supervised_model_compare
   :align: center
