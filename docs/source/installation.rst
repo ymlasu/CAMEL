@@ -21,6 +21,8 @@ Recommended packages:
    * matplotlib
 * For metrics evaluation
    * gap statistics, coranking, optics
+* For comaprision with other methods
+   * umap-learn, trimap, pacmap
 
 Install Options
 --------------------
