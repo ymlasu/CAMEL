@@ -9,7 +9,7 @@ One simple example template is available in the git_folder_structure under folde
 
 The first step is to import all nessary modulues, such as 
 
-.. code:: python3
+.. code-block:: python3
     import matplotlib.pyplot as plt
     import time
     from camel import CAMEL
