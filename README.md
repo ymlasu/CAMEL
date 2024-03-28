@@ -67,7 +67,7 @@ The CAMEL is very easy to start with. You can start a basic unsupervised learnin
     from camel import CAMEL
     from sklearn import datasets
 
-    X, y = datasets.make_swiss_roll(n_samples=10000, random_state=None)
+    X, y = datasets.make_swiss_roll(n_samples=50000, random_state=None)
 
     reducer= CAMEL()
 
@@ -83,6 +83,13 @@ The CAMEL is very easy to start with. You can start a basic unsupervised learnin
     plt.tight_layout()
     plt.show()
 
+
+Once done, you will see the 2D embedding of the 3D Swiss Roll.
+
+.. image:: docs/swiss_roll_unsupervised.png
+  :width: 600
+  :alt: swiss_roll_unsupervised
+  :align: center
 
 Simple code examples in the test folder: (more coming)
 
