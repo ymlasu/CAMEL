@@ -16,6 +16,15 @@ Curvature Augmented Manifold Embedding and Learning -- CAMEL
 
 CAMEL is a Python tool for dimension reduction and data visualization. It can perform unsupervised, supervised, semi-supervised, metric, and inverse learning.
 
+---------------------------
+Theory and Reference
+---------------------------
+Detailed derivation and examples can be found in the ArXiv paper.
+https://arxiv.org/abs/2403.14813
+
+Detailed documentation and examples can be found at (under development)
+https://camel-learn.readthedocs.io/en/latest/
+
 ----------
 Installing
 ----------
@@ -137,21 +146,3 @@ Several parameters can control the CAMEL's results and performance. Default valu
 
 
 The other setting can be seen in the source code and will be updated in future documentation.
-
-
----------------------------
-Theory and Reference
----------------------------
-Detailed derivation and examples can be found in the ArXiv paper.
-https://arxiv.org/abs/2403.14813
-
-Detailed documentation and examples can be found at (under development)
-https://camel-learn.readthedocs.io/en/latest/
-
-
-
-
-
-
-
-
