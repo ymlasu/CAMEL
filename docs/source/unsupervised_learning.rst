@@ -18,7 +18,7 @@ The first step is to import all nessary modulues, such as
 
 The next step is to load the data. We also checked the time() function here to evaluae the speed of computing. In this simple example, we directly used the datasets from sklearn package, swiss_roll.
 
-.. code:: python
+.. code-block:: python
 
     t1=time.time()
     X, y = datasets.make_swiss_roll(n_samples=50000, random_state=None)
@@ -115,7 +115,7 @@ A more comprehensive exmaple is shown here, whic his the template (model_compare
 The first step is to import all nessary modulues, such as 
 
 .. code:: python
-    
+
     # need to install the following packages
     import umap
     import trimap
