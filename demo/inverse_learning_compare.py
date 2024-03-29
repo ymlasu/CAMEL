@@ -96,171 +96,202 @@ data_path = "../data/"
 output_path = "../output/inverse_learning/"
 
 
-# methods_compare= ['CAMEL']
-# data_compare = ['MNIST']
+methods_compare= ['CAMEL']
+data_compare = ['MNIST']
 
-# X, y = data_prep(data_path, data_compare[0], size=10000)
+X, y = data_prep(data_path, data_compare[0], size=10000)
     
-# if len(set(y))>0.1*y.shape[0]:
-#     labels_contineous=True
-#     target_type='numerical'
-#     target_metric='l2'
-# else:
-#     labels_contineous=False
-#     target_type='categorical'
-#     target_metric='categorical'
+if len(set(y))>0.1*y.shape[0]:
+    labels_contineous=True
+    target_type='numerical'
+    target_metric='l2'
+else:
+    labels_contineous=False
+    target_type='categorical'
+    target_metric='categorical'
             
             
-# reducer= CAMEL(target_type=target_type, random_state=1)
+reducer= CAMEL(target_type=target_type, random_state=1)
 
-# X_embedding = reducer.fit_transform(X)
-# y = y.astype(int)
+X_embedding = reducer.fit_transform(X)
+y = y.astype(int)
 
-# #Xnewdata=X[1:X.shape[0],:]
-# #X_transformed = reducer.transform(Xnew,basis=X)
+#Xnewdata=X[1:X.shape[0],:]
+#X_transformed = reducer.transform(Xnew,basis=X)
 
-# plt.figure(figsize=(6,6),layout='constrained',dpi=300)
-# plt.scatter(X_embedding[:, 0], X_embedding[:, 1], c=y, cmap='jet', s=0.2)
-# plt.title('CAMEL Embedding')
+plt.figure(figsize=(6,6),layout='constrained',dpi=300)
+plt.scatter(X_embedding[:, 0], X_embedding[:, 1], c=y, cmap='jet', s=0.2)
+plt.title('CAMEL Embedding')
 
-# plt.tight_layout()
-# plt.show()
-
-
+plt.tight_layout()
+plt.show()
 
 
 
 
 
-# corners = np.array([
-#     [-8, 15],  # top left corner
-#     [+20, 0.0], #top right corner
-#     [-18, -5],  # bottom left corner
-#     [+0, -15],  # bottom right
-# ])
 
-# test_pts = np.array([
-#     (corners[0]*(1-x) + corners[1]*x)*(1-y) +
-#     (corners[2]*(1-x) + corners[3]*x)*y
-#     for y in np.linspace(0, 1, 10)
-#     for x in np.linspace(0, 1, 10)
-# ])
 
-# # X_embedding_inverse = reducer.inverse_transform(test_pts)
-# X_embedding_inverse = reducer.inverse_transform(test_pts, init='random')
+corners = np.array([
+    [-8, 15],  # top left corner
+    [+20, 0.0], #top right corner
+    [-18, -5],  # bottom left corner
+    [+0, -15],  # bottom right
+])
 
-# # Set up the grid
-# fig = plt.figure(figsize=(24,12),layout='constrained',dpi=300)
-# gs = GridSpec(10, 20, fig)
-# scatter_ax = fig.add_subplot(gs[:, :10])
-# digit_axes = np.zeros((10, 10), dtype=object)
-# for i in range(10):
-#     for j in range(10):
-#         digit_axes[i, j] = fig.add_subplot(gs[i, 10 + j])
+test_pts = np.array([
+    (corners[0]*(1-x) + corners[1]*x)*(1-y) +
+    (corners[2]*(1-x) + corners[3]*x)*y
+    for y in np.linspace(0, 1, 10)
+    for x in np.linspace(0, 1, 10)
+])
 
-# # Use umap.plot to plot to the major axis
-# # umap.plot.points(mapper, labels=labels, ax=scatter_ax)
-# scatter_ax.scatter(X_embedding[:, 0], X_embedding[:, 1],
-#                     c=y, cmap='jet', s=5)
-# scatter_ax.set(xticks=[], yticks=[])
+# X_embedding_inverse = reducer.inverse_transform(test_pts)
+X_embedding_inverse = reducer.inverse_transform(test_pts, init='random')
 
-# # Plot the locations of the text points
-# scatter_ax.scatter(test_pts[:, 0], test_pts[:, 1], marker='x', c='k', s=100)
+# Set up the grid
+fig = plt.figure(figsize=(24,12),layout='constrained',dpi=300)
+gs = GridSpec(10, 20, fig)
+scatter_ax = fig.add_subplot(gs[:, :10])
+digit_axes = np.zeros((10, 10), dtype=object)
+for i in range(10):
+    for j in range(10):
+        digit_axes[i, j] = fig.add_subplot(gs[i, 10 + j])
 
-# # Plot each of the generated digit images
-# for i in range(10):
-#     for j in range(10):
-#         digit_axes[i, j].imshow(X_embedding_inverse[i*10 + j].reshape(28, 28))
-#         digit_axes[i, j].set(xticks=[], yticks=[])
+# Use umap.plot to plot to the major axis
+# umap.plot.points(mapper, labels=labels, ax=scatter_ax)
+scatter_ax.scatter(X_embedding[:, 0], X_embedding[:, 1],
+                    c=y, cmap='jet', s=5)
+scatter_ax.set(xticks=[], yticks=[])
+
+# Plot the locations of the text points
+scatter_ax.scatter(test_pts[:, 0], test_pts[:, 1], marker='x', c='k', s=100)
+
+# Plot each of the generated digit images
+for i in range(10):
+    for j in range(10):
+        digit_axes[i, j].imshow(X_embedding_inverse[i*10 + j].reshape(28, 28))
+        digit_axes[i, j].set(xticks=[], yticks=[])
         
         
         
-# plt.savefig(output_path +'inverse_learning.png')
+plt.savefig(output_path +'camel_inverse_learning_MNIST_random.png')
+
+# X_embedding_inverse = reducer.inverse_transform(test_pts)
+X_embedding_inverse = reducer.inverse_transform(test_pts, init='interpolate')
+
+# Set up the grid
+fig = plt.figure(figsize=(24,12),layout='constrained',dpi=300)
+gs = GridSpec(10, 20, fig)
+scatter_ax = fig.add_subplot(gs[:, :10])
+digit_axes = np.zeros((10, 10), dtype=object)
+for i in range(10):
+    for j in range(10):
+        digit_axes[i, j] = fig.add_subplot(gs[i, 10 + j])
+
+# Use umap.plot to plot to the major axis
+# umap.plot.points(mapper, labels=labels, ax=scatter_ax)
+scatter_ax.scatter(X_embedding[:, 0], X_embedding[:, 1],
+                    c=y, cmap='jet', s=5)
+scatter_ax.set(xticks=[], yticks=[])
+
+# Plot the locations of the text points
+scatter_ax.scatter(test_pts[:, 0], test_pts[:, 1], marker='x', c='k', s=100)
+
+# Plot each of the generated digit images
+for i in range(10):
+    for j in range(10):
+        digit_axes[i, j].imshow(X_embedding_inverse[i*10 + j].reshape(28, 28))
+        digit_axes[i, j].set(xticks=[], yticks=[])
+        
+        
+        
+plt.savefig(output_path +'camel_inverse_learning_MNIST_interpolate.png')
 
 
 ######################################################################################
 
 
-# methods_compare= ['CAMEL']
-# data_compare = ['FMNIST']
+methods_compare= ['CAMEL']
+data_compare = ['FMNIST']
 
-# X, y = data_prep(data_path, data_compare[0], size=10000)
+X, y = data_prep(data_path, data_compare[0], size=10000)
 
-# if len(set(y))>0.1*y.shape[0]:
-#     labels_contineous=True
-#     target_type='numerical'
-#     target_metric='l2'
-# else:
-#     labels_contineous=False
-#     target_type='categorical'
-#     target_metric='categorical'
-
-
-# reducer= CAMEL(target_type=target_type, random_state=1)
-
-# X_embedding = reducer.fit_transform(X, y)
-# y = y.astype(int)
-
-# #Xnewdata=X[1:X.shape[0],:]
-# #X_transformed = reducer.transform(Xnew,basis=X)
-
-# plt.figure(figsize=(6,6),layout='constrained',dpi=300)
-# plt.scatter(X_embedding[:, 0], X_embedding[:, 1], c=y, cmap='jet', s=0.2)
-# plt.title('CAMEL Embedding')
-
-# plt.tight_layout()
-# plt.show()
+if len(set(y))>0.1*y.shape[0]:
+    labels_contineous=True
+    target_type='numerical'
+    target_metric='l2'
+else:
+    labels_contineous=False
+    target_type='categorical'
+    target_metric='categorical'
 
 
+reducer= CAMEL(target_type=target_type, random_state=1)
+
+X_embedding = reducer.fit_transform(X, y)
+y = y.astype(int)
+
+#Xnewdata=X[1:X.shape[0],:]
+#X_transformed = reducer.transform(Xnew,basis=X)
+
+plt.figure(figsize=(6,6),layout='constrained',dpi=300)
+plt.scatter(X_embedding[:, 0], X_embedding[:, 1], c=y, cmap='jet', s=0.2)
+plt.title('CAMEL Embedding')
+
+plt.tight_layout()
+plt.show()
 
 
 
 
 
-# corners = np.array([
-#     [-15, 20],  # top left corner
-#     [+15, 20], #top right corner
-#     [-15, -20],  # bottom left corner
-#     [+15, -20],  # bottom right
-# ])
 
-# test_pts = np.array([
-#     (corners[0]*(1-x) + corners[1]*x)*(1-y) +
-#     (corners[2]*(1-x) + corners[3]*x)*y
-#     for y in np.linspace(0, 1, 10)
-#     for x in np.linspace(0, 1, 10)
-# ])
 
-# # X_embedding_inverse = reducer.inverse_transform(test_pts)
+corners = np.array([
+    [-15, 20],  # top left corner
+    [+15, 20], #top right corner
+    [-15, -20],  # bottom left corner
+    [+15, -20],  # bottom right
+])
+
+test_pts = np.array([
+    (corners[0]*(1-x) + corners[1]*x)*(1-y) +
+    (corners[2]*(1-x) + corners[3]*x)*y
+    for y in np.linspace(0, 1, 10)
+    for x in np.linspace(0, 1, 10)
+])
+
 # X_embedding_inverse = reducer.inverse_transform(test_pts)
+X_embedding_inverse = reducer.inverse_transform(test_pts)
 
-# # Set up the grid
-# fig = plt.figure(figsize=(24,12),layout='constrained',dpi=300)
-# gs = GridSpec(10, 20, fig)
-# scatter_ax = fig.add_subplot(gs[:, :10])
-# digit_axes = np.zeros((10, 10), dtype=object)
-# for i in range(10):
-#     for j in range(10):
-#         digit_axes[i, j] = fig.add_subplot(gs[i, 10 + j])
+# Set up the grid
+fig = plt.figure(figsize=(24,12),layout='constrained',dpi=300)
+gs = GridSpec(10, 20, fig)
+scatter_ax = fig.add_subplot(gs[:, :10])
+digit_axes = np.zeros((10, 10), dtype=object)
+for i in range(10):
+    for j in range(10):
+        digit_axes[i, j] = fig.add_subplot(gs[i, 10 + j])
 
-# # Use umap.plot to plot to the major axis
-# # umap.plot.points(mapper, labels=labels, ax=scatter_ax)
-# scatter_ax.scatter(X_embedding[:, 0], X_embedding[:, 1],
-#                     c=y, cmap='jet', s=5)
-# scatter_ax.set(xticks=[], yticks=[])
+# Use umap.plot to plot to the major axis
+# umap.plot.points(mapper, labels=labels, ax=scatter_ax)
+scatter_ax.scatter(X_embedding[:, 0], X_embedding[:, 1],
+                    c=y, cmap='jet', s=5)
+scatter_ax.set(xticks=[], yticks=[])
 
-# # Plot the locations of the text points
-# scatter_ax.scatter(test_pts[:, 0], test_pts[:, 1], marker='x', c='k', s=100)
+# Plot the locations of the text points
+scatter_ax.scatter(test_pts[:, 0], test_pts[:, 1], marker='x', c='k', s=100)
 
-# # Plot each of the generated digit images
-# for i in range(10):
-#     for j in range(10):
-#         digit_axes[i, j].imshow(X_embedding_inverse[i*10 + j].reshape(28, 28))
-#         digit_axes[i, j].set(xticks=[], yticks=[])
+# Plot each of the generated digit images
+for i in range(10):
+    for j in range(10):
+        digit_axes[i, j].imshow(X_embedding_inverse[i*10 + j].reshape(28, 28))
+        digit_axes[i, j].set(xticks=[], yticks=[])
 
 
 
-# plt.savefig(output_path +'inverse_learning.png')
+plt.savefig(output_path +'camel_inverse_learning_FMNIST.png')
 
 
 ##########################################################################################
@@ -343,7 +374,7 @@ for i in range(10):
         
         
         
-plt.savefig(output_path +'inverse_learning.png')
+plt.savefig(output_path +'umap_inverse_learning_FMNIST.png')
 
 
 
