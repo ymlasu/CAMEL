@@ -238,7 +238,9 @@ Since there are several methods and datasets, the visulization is orgnized using
 
 The above code performs the computing by looping through methods, data, and different weight coefficients. 
 
-Finally, all results are saved in the specified output path. Once all done, you can check the visulization of embedding results.
+Finally, all results are saved in the specified output path. Once all done, you can check the visulization of embedding results. As can be seen, the weight coeefficients have significant impact on the final embedding. 
+
+The left most column is the unsupervised learning (weight = 0) and right most column is the supervised learning with weight =1.0. The transiion results are shown i nthe middle collumns. 
 
 .. image:: ../supervised_model_compare.png
   :width: 600

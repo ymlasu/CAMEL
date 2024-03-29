@@ -22,12 +22,11 @@ Theory and Reference
 Detailed derivation and examples can be found in the ArXiv paper.
 https://arxiv.org/abs/2403.14813
 
-Detailed documentation and examples can be found at (under development)
-https://camel-learn.readthedocs.io/en/latest/
+Detailed documentation and examples can be found at https://camel-learn.readthedocs.io/en/latest/
 
-----------
+-----------
 Installing
-----------
+-----------
 
 CAMEL Requirements:
 
@@ -57,9 +56,9 @@ the dependencies manually using Anaconda. The author has tried Anaconda in Mac O
 
 
 
----------------
+-----------------
 How to use CAMEL
----------------
+-----------------
 
 The camel package is inspired and developed based on many dimension reduction packages, such as UMAP, TriMAP, and PaCMAP, which follow a similar setting from sklearn classes. Thus, CAMEL shares a similar calling format using the CAMEL API.
 
