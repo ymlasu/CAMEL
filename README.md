@@ -22,8 +22,7 @@ Theory and Reference
 Detailed derivation and examples can be found in the ArXiv paper.
 https://arxiv.org/abs/2403.14813
 
-Detailed documentation and examples can be found at (under development)
-https://camel-learn.readthedocs.io/en/latest/
+Detailed documentation and examples can be found at https://camel-learn.readthedocs.io/en/latest/
 
 ----------
 Installing
