@@ -356,7 +356,7 @@ The above code performs the supervised learning and the well-seperated clusters 
   :align: center
 
 
-.. image:: ../camel_inverse_learning_FMNIST.png
+.. image:: ../camel_inverse_learning_FMNIST_supervised.png
   :width: 600
   :alt: supervised_model_compare
   :align: center
