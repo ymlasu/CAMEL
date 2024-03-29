@@ -5,7 +5,7 @@ This is the most basic operation of CAMEL. We will use several examples below wi
 
 Simple case
 ------------
-One simple example template is available in the git_folder_structure under folder test (unsupervised_learning.py).
+One simple example template is available in the git_folder_structure under folder test (test_camel_unsupervised.py).
 
 The first step is to import all nessary modulues, such as 
 

@@ -5,7 +5,7 @@ This is another basic operation of CAMEL. We will use several examples below wit
 
 Simple case
 ------------
-One simple example template is available in the git_folder_structure under folder test (supervised_learning.py).
+One simple example template is available in the git_folder_structure under folder test (test_camel_supervised.py).
 
 The first step is to import all nessary modulues, such as 
 
