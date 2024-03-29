@@ -260,7 +260,7 @@ As expected, no clear clustering and seperation can be seen using the unsupervis
 
         plt.savefig(output_path +'camel_inverse_learning_FMNIST_unsuper.png')
 
-.. image:: ../camel_inverse_learning_FMNIST_unsuper.png
+.. image:: ../camel_inverse_learning_FMNIST_unsupervised.png
   :width: 600
   :alt: supervised_model_compare
   :align: center
@@ -355,7 +355,8 @@ The above code performs the supervised learning and the well-seperated clusters 
   :alt: supervised_model_compare
   :align: center
 
-  .. image:: ../camel_inverse_learning_FMNIST.png
+
+.. image:: ../camel_inverse_learning_FMNIST.png
   :width: 600
   :alt: supervised_model_compare
   :align: center
