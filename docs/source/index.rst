@@ -46,6 +46,7 @@ Contents
    semisupervised_learning
    metric_learning
    inverse_learning
+   plotting
    clustering_classification
    regression_prediction
    quantitative_evaluation
