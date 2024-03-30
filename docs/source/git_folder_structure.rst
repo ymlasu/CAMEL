@@ -13,11 +13,11 @@ The folder structure is schematically shown below
     - plot_util
     - source
     - test
-    READEME.md
-    setup.cfg
-    pyproject.toml
-    .readthedocs.yaml
-    license
+        * READEME.md
+        * setup.cfg
+        * pyproject.toml
+        * .readthedocs.yaml
+        * license
 
 
 Dicussion for each folder is given below.
