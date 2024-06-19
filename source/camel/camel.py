@@ -13,8 +13,6 @@
 # Initia release date: 02/2024
 
 
-
-
 import numba
 import time
 import math
@@ -131,7 +129,9 @@ def target_scale_compute_1D(X, target, number_samples):
     Targetmaximum = target.shape[0]
     X_distance=0.0
     Target_distance=0.0
-
+    
+    np.random.seed(_RANDOM_STATE)
+    
     for i in numba.prange(number_samples):
         sampleX1=np.random.randint(Xmaximum)
         sampleX2=np.random.randint(Xmaximum)
@@ -169,6 +169,9 @@ def target_scale_compute_2D(X, target, number_samples):
     Targetmaximum = target.shape[0]
     X_distance=0.0
     Target_distance=0.0
+    
+    np.random.seed(_RANDOM_STATE)
+    
     for i in numba.prange(number_samples):
         sampleX1=np.random.randint(Xmaximum)
         sampleX2=np.random.randint(Xmaximum)
@@ -388,7 +391,7 @@ def update_embedding_adam(Y, grad, m, v, beta1, beta2, lr, itr):
             Y[i][d] -= lr_t * m[i][d]/(math.sqrt(v[i][d]) + 1e-7)
 
 
-@numba.njit("f4[:,:](f4[:,:],i4[:,:],i4[:,:],f4,f4,f4,f4,f4[:],f4[:,:],f4[:,:],f4[:])", parallel=True, nogil=True, cache=True)
+@numba.njit("f4[:,:](f4[:,:],i4[:,:],i4[:,:],f4,f4,f4,f4,f4[:],f4[:,:],f4[:,:],f4[:])", nogil=True, cache=True)
 def camel_grad(Y, pair_neighbors, pair_FP, w_neighbors, w_curv, w_FP, 
                tail_coe, edge_curvature, w_neighbors_distances, w_distances_FP, edge_curvature_X):
     '''Calculate the gradient for CAMEL embedding'''
@@ -440,7 +443,7 @@ def camel_grad(Y, pair_neighbors, pair_FP, w_neighbors, w_curv, w_FP,
     return grad
 
 
-@numba.njit("f4[:,:](f4[:,:],i4[:,:],i4[:,:],i4,i4,f4,f4,f4,f4,f4[:],f4[:,:],f4[:,:],f4[:])", parallel=True, nogil=True, cache=True)
+@numba.njit("f4[:,:](f4[:,:],i4[:,:],i4[:,:],i4,i4,f4,f4,f4,f4,f4[:],f4[:,:],f4[:,:],f4[:])", nogil=True, cache=True)
 def camel_grad_transform(Y, pair_neighbors, pair_FP, number_neighbor, number_FP,
                    w_neighbors, w_curv, w_FP, tail_coe, edge_curvature,w_neighbors_distances, w_distances_FP, edge_curvature_X):
     '''Calculate the gradient for camel embedding for new testing data, 
